@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/styles.css">
     <title>Project: Delta</title>
 </head>
 <body id="home">
+    <div id="app">
     <div class="navBar">
         <ul>
             <li><img src="https://github.com/deltaproject/Delta/raw/master/img/icons/icon.png" alt=""></li>
@@ -26,12 +29,16 @@
         <section id="downloads">
             <h1 class="title">Downloads</h1>
             <div class="osIcons">
-                <a href="#"><i class="fab fa-windows" title="Download voor Windows"></i></a>
-                <a href="#"><i class="fab fa-apple" title="Download voor macOS"></i></a>
-                <a href="#"><i class="fab fa-linux" title="Download voor Linux"></i></a> 
-                <a href="#"><i class="fab fa-android" title="De Android app is helaas nog niet beschikbaar."></i></a>
+                <a :href="downloads.windows"><i class="fab fa-windows" title="Download voor Windows"></i></a>
+                <a :href="downloads.macos"><i class="fab fa-apple" title="Download voor macOS"></i></a>
+                <a :href="downloads.linux"><i class="fab fa-linux" title="Download voor Linux"></i></a> 
+                <a href="#"><i class="fab fa-android" title="De Android-app is helaas nog niet beschikbaar."></i></a>
             </div>
         </section>
     </div>
+
+    </div>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
