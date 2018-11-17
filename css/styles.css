@@ -1,0 +1,28 @@
+body {
+    font-family: Poppins;
+    user-select: none;
+    margin-top: 20vh;
+}
+
+a {
+    color: rgb(43, 221, 183);
+}
+
+.container {
+    text-align: center;
+}
+
+.big-title {
+    font-size: 56px;
+    margin-bottom: -25px;
+}
+
+.description {
+    color: rgb(151, 151, 151);
+    font-size: 34px;
+}
+
+.detail {
+    color: rgb(158, 158, 158);
+    font-size: 18px;
+}
