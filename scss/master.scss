@@ -3,6 +3,10 @@ html, body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Poppins;
 }
@@ -12,7 +16,7 @@ a {
 }
 
 .container {
-    margin-top: 160px;
+    padding-top: 160px;
     text-align: center;
 }
 
