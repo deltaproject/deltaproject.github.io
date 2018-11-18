@@ -18,6 +18,7 @@
             <li><img src="https://github.com/deltaproject/Delta/raw/master/img/icons/icon.png" alt=""></li>
             <li><a href="#home">Home</a></li>
             <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#release">Wat is er nieuw</a></li>
         </ul>
     </div>
 
@@ -35,6 +36,13 @@
                 <a :href="downloads.linux"><i class="fab fa-linux" title="Download voor Linux"></i></a> 
                 <a href="#"><i class="fab fa-android" title="De Android-app is helaas nog niet beschikbaar."></i></a>
             </div>
+        </section>
+
+        <section id="release">
+            <h1 class="title">Wat is er nieuw</h1>
+            <h2 class="description">Hieronder vind je de release notes van de meest recente versie.</h2>
+            <textarea name="releaseNotes" class="releaseNotes" cols="55"
+                rows="15" v-model="desc" readonly></textarea>
         </section>
     </div>
 
