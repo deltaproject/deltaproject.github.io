@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#app",
     data: {
         version: "",
+        desc: "",
         isPreRelease: false,
         downloads: {
             windows: "#",
@@ -13,6 +14,7 @@ var app = new Vue({
 
 $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(data) {
     app.version = data[0].tag_name;
+    app.desc = data[0].body;    
     app.isPreRelease = data[0].prerelease;
     
     var assets = data[0].assets;
