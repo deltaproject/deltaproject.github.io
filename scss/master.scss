@@ -1,3 +1,8 @@
+@keyframes fadeContainer {
+    from { opacity: 0; }
+    from { opacity: 1; }
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -18,9 +23,7 @@ a {
 .container {
     padding: 140px 0;
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-    animation-delay: 0.8s;
+    animation: fadeIn 0.8s;
 }
 
 .title, .big-title {
