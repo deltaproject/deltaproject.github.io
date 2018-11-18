@@ -4,18 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Project Delta</title>
+    <link rel="stylesheet" href="./dist/css/styles.css">
+    <title>Project: Delta</title>
 </head>
 <body>
+    <div id="app">
+    <div class="navBar">
+        <ul>
+            <li><img src="https://github.com/deltaproject/Delta/raw/master/img/icons/icon.png" alt=""></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#release">Wat is er nieuw</a></li>
+            <li><a href="#github">GitHub</a></li>
+        </ul>
+    </div>
+
     <div class="container">
-    
-    <img src="https://github.com/deltaproject/Delta/raw/master/img/icons/icon.png" width="240px" alt="">
-    <h1 class="big-title">Coming soon!</h1>
-    <h2 class="description">We zijn bezig deze website te ontwikkelen.</h2>
-    <p class="detail">In de tussentijd kun je <a href="https://github.com/deltaproject/Delta">onze GitHub repository</a> bekijken.</p>
+
+        <section>
+            <h1 class="big-title">Magister. Vernieuwd.</h1>
+            <h2 class="description">Een compleet vernieuwde gebruikerservaring voor leerlingen.</h2>
+            <img src="https://raw.githubusercontent.com/deltaproject/Delta/master/img/screenshots/screenshot.png"
+                alt="Screenshot" class="screenshot">
+        </section>
+
+        <section id="downloads">
+            <h1 id="titleDownloads" class="title">Downloads</h1>
+            <h2 class="description">{{ version }} <span class="pre-release" v-if="isPreRelease">BETA</span></h2>
+            <div class="osIcons">
+                <a :href="downloads.windows"><i class="fab fa-windows" title="Download voor Windows"></i></a>
+                <a :href="downloads.macos"><i class="fab fa-apple" title="Download voor macOS"></i></a>
+                <a :href="downloads.linux"><i class="fab fa-linux" title="Download voor Linux"></i></a> 
+                <a href="#"><i class="fab fa-android" title="De Android-app is helaas nog niet beschikbaar."></i></a>
+            </div>
+        </section>
+
+        <section id="release">
+            <h1 class="title">Wat is er nieuw</h1>
+            <h2 class="description">Hieronder vind je de release notes van alle versies.</h2>
+            <textarea name="releaseNotes" class="releaseNotes" cols="65"
+                rows="15" v-model="releaseNotes" readonly></textarea>
+        </section>
+
+        <section id="github">
+            <h1 class="title">
+                GitHub
+                <a class="starsBadge" target="_blank" href="https://github.com/deltaproject/Delta">
+                    <img src="https://img.shields.io/github/stars/deltaproject/Delta.svg?label=Stars&style=social" alt="Stars">
+                </a>
+            </h1>
+
+            <h2 class="description">Delta wordt gehost in een GitHub-repository en is <a target="_blank" href="https://nl.wikipedia.org/wiki/Open_source">open source</a>.</h2>
+            <a target="_blank" href="https://github.com/deltaproject/Delta"
+                class="btnDefault">Bekijk de code op GitHub</a>
+        </section>
+    </div>
 
     </div>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
