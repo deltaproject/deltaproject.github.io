@@ -94,3 +94,24 @@ a {
     vertical-align: 10%;
     margin-left: 5px;
 }
+
+a.btnDefault {
+    $btnColor: rgb(0, 204, 255);
+
+    padding: 10px 25px;
+    border: 2px solid $btnColor;
+    border-radius: 7px;
+    color: $btnColor;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.5s;
+
+    &:hover {
+        background: $btnColor;
+        color: white;
+    }
+}
+
+#github h2 {
+    padding-bottom: 10px !important;
+}
