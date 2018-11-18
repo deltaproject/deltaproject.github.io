@@ -20,13 +20,20 @@ a {
     text-align: center;
 }
 
+.title, .big-title {
+    margin-bottom: -25px;
+}
+
 .title {
     font-size: 42px;
 }
 
 .big-title {
     font-size: 56px;
-    margin-bottom: -25px;
+}
+
+#titleDownloads {
+    margin-bottom: 0;
 }
 
 .description {
