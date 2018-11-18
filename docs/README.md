@@ -1,2 +1,3 @@
 # Website
-> Er wordt hier binnenkort aan gewerkt.
+🌐 De officiële website van ProjectMagister.
+> Je kunt de site bekijken op https://deltaproject.github.io
