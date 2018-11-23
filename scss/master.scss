@@ -78,12 +78,25 @@ a {
     }
 }
 
-.pre-release {
+.releaseLabel {
     padding: 3px 10px;
     border-radius: 6px;
     margin-left: 8px;
-    background: rgb(218, 45, 22);
     color: white;
+}
+
+.preRelease {
+    background: rgb(218, 45, 22);
+    &::before {
+        content: "BETA";
+    }
+}
+
+.stableRelease {
+    background: rgb(0, 199, 33);
+    &::before {
+        content: "STABLE";
+    }
 }
 
 .releaseNotes {
