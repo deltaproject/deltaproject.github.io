@@ -42,7 +42,10 @@
 
         <section id="downloads">
             <h1 id="titleDownloads" class="title">Downloads</h1>
-            <h2 class="description">{{ version }} <span class="pre-release" v-if="isPreRelease">BETA</span></h2>
+            <h2 class="description">{{ version }}
+                <span class="releaseLabel"
+                    :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
+            </h2>
             <div class="osIcons">
                 <a :href="downloads.windows"><i class="fab fa-windows" title="Download voor Windows"></i></a>
                 <a :href="downloads.macos"><i class="fab fa-apple" title="Download voor macOS"></i></a>
