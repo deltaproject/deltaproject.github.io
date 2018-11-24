@@ -12,6 +12,17 @@ var app = new Vue({
     }
 });
 
+function printBanner() {
+    console.log("%cHey! Jij daar! 😎",
+        "font-size: 40px; font-weight: bold; font-family: Helvetica;");
+
+    console.log("%cDit is een project van Kees van Voorthuizen (VCL A4a).\n" +
+        "Hou jij ook van programmeren en wil je meewerken aan dit project?\n" +
+        "%cStuur mij dan een bericht op https://keybase.io/keesvv!",
+        "font-size: 22px; font-weight: bold; font-family: Helvetica;",
+        "font-size: 22px; font-weight: bold; font-family: Helvetica; color: #21a0e0;");
+}
+
 $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(data) {
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
@@ -40,3 +51,5 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(d
         }
     }
 });
+
+printBanner();
