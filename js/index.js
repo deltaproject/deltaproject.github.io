@@ -15,6 +15,9 @@ var app = new Vue({
             var converter = new showdown.Converter()
             var rawHtml = converter.makeHtml(body);
             return rawHtml;
+        },
+        openReleasePage(tagName) {
+            window.open(`https://github.com/deltaproject/Delta/releases/${tagName}`, "_blank")
         }
     }
 });

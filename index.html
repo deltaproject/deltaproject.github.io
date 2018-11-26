@@ -59,7 +59,7 @@
             <h2 class="description">Hieronder vind je de release notes van alle versies.</h2>
 
             <div class="releaseContainer">
-                <div v-for="i in releases" class="releaseCard">
+                <div v-for="i in releases" class="releaseCard" @click="openReleasePage(i.tag_name)">
                     <p class="releaseTitle">{{ i.tag_name }}
                         <span class="releaseLabel"
                             :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
