@@ -2,12 +2,19 @@ var app = new Vue({
     el: "#app",
     data: {
         version: "",
-        releaseNotes: "",
+        releases: [],
         isPreRelease: false,
         downloads: {
             windows: "#",
             macos: "#",
             linux: "#"
+        }
+    },
+    methods: {
+        getHtmlBody(body) {
+            var converter = new showdown.Converter()
+            var rawHtml = converter.makeHtml(body);
+            return rawHtml;
         }
     }
 });
@@ -24,11 +31,7 @@ function printBanner() {
 }
 
 $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(data) {
-    for (let i = 0; i < data.length; i++) {
-        const element = data[i];
-        app.releaseNotes += `${element.tag_name}\n====\n\n${element.body}\n\n\n`;
-    }
-
+    app.releases = data;
     app.version = data[0].tag_name;
     app.isPreRelease = data[0].prerelease;
     
