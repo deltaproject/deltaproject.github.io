@@ -8,6 +8,10 @@ var app = new Vue({
             windows: "#",
             macos: "#",
             linux: "#"
+        },
+        stats: {
+            commits: 0,
+            contributors: 0
         }
     },
     methods: {
@@ -56,6 +60,19 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(d
             app.downloads.linux = url;
         }
     }
+});
+
+$.getJSON("https://api.github.com/repos/deltaproject/Delta/contributors", function (data) {
+    let commitCount = 0;
+    let contributors = 0;
+
+    data.forEach(i => {
+        commitCount += i.contributions;
+        contributors++;
+    });
+
+    app.stats.commits = commitCount;
+    app.stats.contributors = contributors;
 });
 
 printBanner();
