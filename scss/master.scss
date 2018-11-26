@@ -144,3 +144,17 @@ img.screenshot {
 section {
     margin-bottom: 100px;
 }
+
+.statsBar {
+    i {
+        color: rgb(50, 235, 173);
+        font-size: 45px;
+    }
+
+    div {
+        display: inline-block;
+        margin: 15px;
+        font-size: 22px;
+        color: grey;
+    }
+}
