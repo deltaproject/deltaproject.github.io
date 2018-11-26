@@ -1,0 +1,27 @@
+.releaseContainer {
+    width: 650px;
+    max-height: 350px;
+    margin: auto;
+    overflow-y: auto;
+}
+
+.releaseCard {
+    background: white;
+    color: black;
+    padding: 6px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.315);
+    animation: fadeIn 0.6s;
+    cursor: pointer;
+
+    .releaseTitle {
+        font-weight: bold;
+    }
+
+    .releaseBody {
+        padding: 8px;
+        font-size: 0.9em;
+        text-align: left;
+    }
+}
