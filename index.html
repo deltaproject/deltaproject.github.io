@@ -11,6 +11,7 @@
     <meta property="og:image" content="https://github.com/deltaproject/Delta/blob/master/img/icons/icon@64px.png">
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/master/dist/showdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/deltaproject/Delta/master/img/icons/icon%4064px.png"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -32,7 +33,6 @@
     </div>
 
     <div class="container">
-
         <section>
             <h1 class="big-title">Magister. Vernieuwd.</h1>
             <h2 class="description">Een compleet vernieuwde gebruikerservaring voor leerlingen.</h2>
@@ -57,8 +57,17 @@
         <section id="release">
             <h1 class="title">Wat is er nieuw</h1>
             <h2 class="description">Hieronder vind je de release notes van alle versies.</h2>
-            <textarea name="releaseNotes" class="releaseNotes" cols="65"
-                rows="15" v-model="releaseNotes" readonly></textarea>
+
+            <div class="releaseContainer">
+                <div v-for="i in releases" class="releaseCard">
+                    <p class="releaseTitle">{{ i.tag_name }}
+                        <span class="releaseLabel"
+                            :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
+                    </p>
+
+                    <div v-html="getHtmlBody(i.body)" class="releaseBody"></div>
+                </div>
+            </div>
         </section>
 
         <section id="github">
@@ -74,7 +83,6 @@
                 class="btnDefault">Bekijk de code op GitHub</a>
         </section>
     </div>
-
     </div>
 
     <script src="./js/index.js"></script>
