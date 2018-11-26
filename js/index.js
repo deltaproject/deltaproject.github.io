@@ -11,7 +11,9 @@ var app = new Vue({
         },
         stats: {
             commits: 0,
-            contributors: 0
+            contributors: 0,
+            releases: 0,
+            license: "MPL-2.0"
         }
     },
     methods: {
@@ -39,6 +41,7 @@ function printBanner() {
 
 $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(data) {
     app.releases = data;
+    app.stats.releases = data.length;
     app.version = data[0].tag_name;
     app.isPreRelease = data[0].prerelease;
     
@@ -64,15 +67,13 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(d
 
 $.getJSON("https://api.github.com/repos/deltaproject/Delta/contributors", function (data) {
     let commitCount = 0;
-    let contributors = 0;
 
     data.forEach(i => {
         commitCount += i.contributions;
-        contributors++;
     });
 
     app.stats.commits = commitCount;
-    app.stats.contributors = contributors;
+    app.stats.contributors = data.length;
 });
 
 printBanner();
