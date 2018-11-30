@@ -7,7 +7,8 @@ var app = new Vue({
         downloads: {
             windows: "#",
             macos: "#",
-            linux: "#"
+            linux: "#",
+            source: "#"
         },
         stats: {
             commits: 0,
@@ -44,6 +45,8 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(d
     app.stats.releases = data.length;
     app.version = data[0].tag_name;
     app.isPreRelease = data[0].prerelease;
+
+    app.downloads.source = data[0].zipball_url;
     
     var assets = data[0].assets;
     for (let i = 0; i < assets.length; i++) {
