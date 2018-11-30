@@ -107,15 +107,6 @@ a {
     }
 }
 
-.releaseNotes {
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    resize: none;
-}
-
 .starsBadge {
     display: inline-block;
     vertical-align: 10%;
@@ -132,6 +123,10 @@ a.btnDefault {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, color 0.5s;
+
+    i {
+        margin-right: 8px;
+    }
 
     &:hover {
         background: $btnColor;
