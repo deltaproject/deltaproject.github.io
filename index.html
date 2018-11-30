@@ -27,7 +27,8 @@
             <li><img src="https://github.com/deltaproject/Delta/raw/master/img/icons/icon.png" alt=""></li>
             <li><a href="#">Home</a></li>
             <li><a href="#downloads">Downloads</a></li>
-            <li><a href="#release">Wat is er nieuw</a></li>
+            <li><a href="#updates">Wat is er nieuw</a></li>
+            <li><a href="#about">Over</a></li>
             <li><a href="#github">GitHub</a></li>
         </ul>
     </div>
@@ -56,7 +57,7 @@
             <p class="detail">of download de <a :href="downloads.source">source code</a> voor deze versie.</p>
         </section>
 
-        <section id="release">
+        <section id="updates">
             <h1 class="title">Wat is er nieuw</h1>
             <h2 class="description">Hieronder vind je de release notes van alle versies.</h2>
 
@@ -70,6 +71,19 @@
                     <div v-html="getHtmlBody(i.body)" class="releaseBody"></div>
                 </div>
             </div>
+        </section>
+
+        <section id="about">
+            <h1 class="title">Over</h1>
+            <h2 class="description">Delta is een project dat streeft naar een betere en transparante gebruikerservaring.</h2>
+            <p class="descExtended">
+                <b>Project: Delta</b> is een non-profitorganisatie die zich bezighoudt met het verbeteren van Magister. Magister is een populaire app gemaakt voor leerlingen op het voortgezet onderwijs. Docenten kunnen via deze app cijfers, huiswerk, afspraken, toetsen, etc. invoeren. Deze app is heel handig, maar niet perfect.
+            </p>
+
+            <p class="descExtended">
+                Wij wilden echter een stapje verder. We zijn erin geslaagd om Magister-gegevens als basis te gebruiken en daaromheen een moderne en cross-platform gebruikersinterface te bouwen. De gegevens worden van de Magister-servers gehaald door middel van de library <a target="_blank" href="https://github.com/simplyGits/MagisterJS">MagisterJS</a>. De rest is opgebouwd uit Node.js, Electron, Vue.js, SCSS en HTML.
+            </p>
+            <a href="#downloads" class="btnDefault"><i class="fas fa-download"></i>Download nu</a>
         </section>
 
         <section id="github">
@@ -104,7 +118,7 @@
 
             <h2 class="description">Delta wordt gehost in een GitHub-repository en is <a target="_blank" href="https://nl.wikipedia.org/wiki/Open_source">open source</a>.</h2>
             <a target="_blank" href="https://github.com/deltaproject/Delta"
-                class="btnDefault">Bekijk de code op GitHub</a>
+                class="btnDefault"><i class="fas fa-code"></i>Bekijk de code op GitHub</a>
         </section>
     </div>
     </div>
