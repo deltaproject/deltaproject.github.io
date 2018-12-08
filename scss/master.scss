@@ -21,7 +21,8 @@ a {
 }
 
 .container {
-    padding: 140px 0;
+    padding-top: 140px;
+    margin: 10px 20px;
     text-align: center;
     animation: fadeIn 0.8s;
 }
@@ -35,7 +36,7 @@ a {
 }
 
 .big-title {
-    font-size: 56px;
+    font-size: 64px;
 }
 
 .no-margin {
@@ -140,6 +141,9 @@ a.btnDefault {
 }
 
 img.screenshot {
+    width: 90%;
+    max-width: 1220px;
+    min-width: 300px;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 70px rgba(0, 0, 0, 0.295);
