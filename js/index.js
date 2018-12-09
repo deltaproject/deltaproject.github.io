@@ -79,4 +79,8 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/contributors", functi
     app.stats.contributors = data.length;
 });
 
+$("#hamburger").click(function () {
+    $("#navbar").toggleClass("open");
+});
+
 printBanner();
