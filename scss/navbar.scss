@@ -56,6 +56,10 @@
 }
 
 @media only screen and (max-width: 850px) {
+    .big-title {
+        font-size: 48px !important;
+    }
+
     #hamburger {
         display: block !important;
     }
