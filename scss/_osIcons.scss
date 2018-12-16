@@ -1,0 +1,25 @@
+.osIcons {
+    i {
+        font-size: 100px;
+        color: rgb(122, 122, 122);
+        margin: 40px;
+        transition: color 0.3s;
+        cursor: pointer;
+
+        &.fa-windows:hover {
+            color: rgb(89, 180, 255);
+        }
+
+        &.fa-apple:hover {
+            color: black;
+        }
+
+        &.fa-linux:hover {
+            color: rgb(255, 145, 0);
+        }
+
+        &.fa-android {
+            color: rgb(230, 230, 230);
+        }
+    }
+}

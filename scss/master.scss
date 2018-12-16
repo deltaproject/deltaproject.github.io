@@ -1,3 +1,7 @@
+@import 'navbar';
+@import 'releaseCards';
+@import 'osIcons';
+
 html, body {
     width: 100%;
     height: 100%;
@@ -74,32 +78,6 @@ a {
 .detail {
     color: rgb(158, 158, 158);
     font-size: 18px;
-}
-
-.osIcons {
-    i {
-        font-size: 100px;
-        color: rgb(122, 122, 122);
-        margin: 40px;
-        transition: color 0.3s;
-        cursor: pointer;
-
-        &.fa-windows:hover {
-            color: rgb(89, 180, 255);
-        }
-
-        &.fa-apple:hover {
-            color: black;
-        }
-
-        &.fa-linux:hover {
-            color: rgb(255, 145, 0);
-        }
-
-        &.fa-android {
-            color: rgb(230, 230, 230);
-        }
-    }
 }
 
 .releaseLabel {
