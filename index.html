@@ -47,10 +47,10 @@
         <section id="downloads">
             <h1 class="title no-margin">Downloads</h1>
             <h2 class="description">{{ version }}
-                <div class="badgeContainer">
+                <div class="badgeContainer" v-if="releases.length != 0">
                     <span class="badge"
                         :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
-                    <span class="badge" class="newRelease" v-if="isNewRelease(releases[0])"></span>
+                    <span class="badge newRelease" v-if="isNewRelease(releases[0])"></span>
                 </div>
             </h2>
             <div class="osIcons">
@@ -73,7 +73,7 @@
                         <div class="badgeContainer">
                             <span class="badge"
                                 :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
-                            <span class="badge" class="newRelease" v-if="isNewRelease(i)"></span>
+                            <span class="badge newRelease" v-if="isNewRelease(i)"></span>
                         </div>
                     </p>
 
