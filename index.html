@@ -47,10 +47,12 @@
         <section id="downloads">
             <h1 class="title no-margin">Downloads</h1>
             <h2 class="description">{{ version }}
-                <span class="releaseLabel"
-                    :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
-                <span class="releaseLabel"
-                    :class="{ newRelease: isNewRelease }"></span>
+                <div class="badgeContainer">
+                    <span class="badge"
+                        :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
+                    <span class="badge"
+                        :class="{ newRelease: isNewRelease(releases[0]) }"></span>
+                </div>
             </h2>
             <div class="osIcons">
                 <a :href="downloads.windows"><i class="fab fa-windows" title="Download voor Windows"></i></a>
@@ -69,8 +71,12 @@
             <div class="releaseContainer">
                 <div v-for="i in releases" class="releaseCard" @click="openReleasePage(i.tag_name)">
                     <p class="releaseTitle">{{ i.tag_name }}
-                        <span class="releaseLabel"
-                            :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
+                        <div class="badgeContainer">
+                            <span class="badge"
+                                :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
+                            <span class="badge"
+                                :class="{ newRelease: isNewRelease(i) }"></span>
+                        </div>
                     </p>
 
                     <div v-html="getHtmlBody(i.body)" class="releaseBody"></div>

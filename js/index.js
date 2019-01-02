@@ -4,7 +4,6 @@ var app = new Vue({
         version: "",
         releases: [],
         isPreRelease: false,
-        isNewRelease: false,
         downloads: {
             windows: "#",
             macos: "#",
@@ -19,6 +18,18 @@ var app = new Vue({
         }
     },
     methods: {
+        isNewRelease(release) {
+            const currentDate = new Date();
+            const publishDate = new Date(release.published_at);
+        
+            if (currentDate.getDate() == publishDate.getDate() &&
+                currentDate.getMonth() == publishDate.getMonth() &&
+                currentDate.getFullYear() == publishDate.getFullYear()) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         getHtmlBody(body) {
             var converter = new showdown.Converter()
             var rawHtml = converter.makeHtml(body);
@@ -46,16 +57,6 @@ $.getJSON("https://api.github.com/repos/deltaproject/Delta/releases", function(d
     app.stats.releases = data.length;
     app.version = data[0].tag_name;
     app.isPreRelease = data[0].prerelease;
-
-    const currentDate = new Date();
-    const publishDate = new Date(data[0].published_at);
-
-    if (currentDate.getDate() == publishDate.getDate() &&
-        currentDate.getMonth() == publishDate.getMonth() &&
-        currentDate.getFullYear() == publishDate.getFullYear()) {
-        app.isNewRelease = true;
-    }
-
     app.downloads.source = data[0].zipball_url;
     
     var assets = data[0].assets;
