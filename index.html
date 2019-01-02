@@ -50,8 +50,7 @@
                 <div class="badgeContainer">
                     <span class="badge"
                         :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
-                    <span class="badge"
-                        :class="{ newRelease: isNewRelease(releases[0]) }"></span>
+                    <span class="badge" class="newRelease" v-if="isNewRelease(releases[0])"></span>
                 </div>
             </h2>
             <div class="osIcons">
@@ -74,8 +73,7 @@
                         <div class="badgeContainer">
                             <span class="badge"
                                 :class="{ stableRelease: !i.prerelease, preRelease: i.prerelease }"></span>
-                            <span class="badge"
-                                :class="{ newRelease: isNewRelease(i) }"></span>
+                            <span class="badge" class="newRelease" v-if="isNewRelease(i)"></span>
                         </div>
                     </p>
 
