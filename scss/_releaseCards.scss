@@ -19,10 +19,12 @@
 
     .releaseTitle {
         font-weight: bold;
+        display: inline-block;
     }
 
     .releaseBody {
         padding: 8px;
+        padding-top: 0;
         font-size: 0.9em;
         text-align: left;
     }
