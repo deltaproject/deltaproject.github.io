@@ -101,6 +101,13 @@ a {
     }
 }
 
+.newRelease {
+    background: rgb(247, 144, 10);
+    &::before {
+        content: "NIEUW";
+    }
+}
+
 .starsBadge {
     display: inline-block;
     vertical-align: 10%;

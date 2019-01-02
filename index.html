@@ -49,6 +49,8 @@
             <h2 class="description">{{ version }}
                 <span class="releaseLabel"
                     :class="{ preRelease: isPreRelease, stableRelease: !isPreRelease }"></span>
+                <span class="releaseLabel"
+                    :class="{ newRelease: isNewRelease }"></span>
             </h2>
             <div class="osIcons">
                 <a :href="downloads.windows"><i class="fab fa-windows" title="Download voor Windows"></i></a>
